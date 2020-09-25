@@ -1,0 +1,63 @@
+{
+    "name": "Deal Hunter Suite",
+    "version": "6.1",
+    "description": "Provide all the Tools needed for Deal Hunter!",
+    "manifest_version": 2,
+    "minimum_chrome_version": "16.0.884",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyI4HGOmPfeK3oX50o2JUPoQtVL7l/6CArnTOkGbZqvj14Ni/fStaDRIj33uWNm+V4px9fNFEi0VxhtqKjchhqrvEhw/vCqr6T0y8lbC8BFQ3Mwct4yUpg+z0Yzs6SwDUKSrYGeZ3v7VsbxSRE7VauQpNHH41WIpVtNp/6g2owPglnFVIVm72oo4ugdhIiF4ylCJPNmyP5ZxaPiQF5+U0LwwIzrVOzZgC66xJaM6csrEuwv2BUarvwf31rXg5Wmsq9tmo0PyDRJ/ZoICTEOXDZXp5asgxlYiqLG4Q8DcJTL3HNEMBhUMlJQl5a+tm3QfzSBgJ5V9gWbc3InxoBnXFfwIDAQAB",
+    "permissions": [
+        "<all_urls>",
+        "tabs",
+        "storage",
+        "notifications",
+        "webRequest",
+        "webRequestBlocking",
+        "system.cpu",
+        "system.memory",
+        "system.storage",
+        "cookies"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com https://dealhuntersuite.com https://huntbug.000webhostapp.com; object-src 'self'",
+    "update_url": "https://dealhuntersuite.com/api/updates/check",
+    "browser_action": {
+        "default_title": "Deal Hunter Suite\nClient",
+        "default_icon": {
+            "16": "assets/img/favicon@16x16.png",
+            "24": "assets/img/favicon@24x24.png",
+            "32": "assets/img/favicon@32x32.png",
+            "64": "assets/img/favicon@64x64.png"
+        }
+    },
+    "icons": {
+        "32": "assets/img/icon@32x32.png",
+        "64": "assets/img/icon@64x64.png",
+        "128": "assets/img/icon@128x128.png"
+    },
+    "web_accessible_resources": [
+        "/assets/sounds/check-off.mp3",
+        "/assets/sounds/check-on.mp3",
+        "/assets/sounds/generic-hover.mp3",
+        "/assets/sounds/generic-hover-soft.mp3",
+        "/assets/sounds/generic-select.mp3",
+        "/assets/sounds/generic-select-soft.mp3",
+        "/assets/sounds/overlay-pop-in.mp3",
+        "/assets/sounds/overlay-pop-out.mp3",
+        "/assets/sounds/generic-confirm.mp3",
+        "/assets/sounds/generic-confirm-2.mp3",
+        "/assets/sounds/notification.mp3",
+        "/assets/sounds/generic-value-change.mp3",
+        "/assets/css/default.css",
+        "/assets/css/button.css",
+        "/assets/js/belibrary.js"
+    ],
+    "background": {
+        "scripts": ["/background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["/assets/js/belibrary.js", "/content.js"],
+            "css": ["/assets/css/button.css"]
+        }
+    ]
+}
