@@ -1,0 +1,384 @@
+/*
+? |-----------------------------------------------------------------------------------------------|
+? |  /assets/css/input.css                                                                        |
+? |                                                                                               |
+? |  Copyright (c) 2018-2020 Belikhun. All right reserved                                         |
+? |  Licensed under the MIT License. See LICENSE in the project root for license information.     |
+? |-----------------------------------------------------------------------------------------------|
+*/
+
+.formGroup {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 8px;
+}
+
+.formGroup > .formField {
+    position: relative;
+
+    width: 100%;
+    margin-top: 4px;
+    padding: 2px 0 7px;
+
+    border: 0;
+    border-bottom: 1px solid rgba(39, 39, 39, 0.4);
+    outline: none;
+
+    color: #424242;
+    font-family: "Segoe UI", "Open Sans", "Calibri", "sans-serif";
+    font-size: 14px;
+
+    user-select: none;
+    background: transparent;
+    transition:
+        border 0.5s ease,
+        padding 0.5s ease;
+}
+
+.formGroup > .formField:focus {
+    padding: 2px 0 6px;
+    border-bottom: 2px solid rgba(39, 39, 39, 0.8);
+}
+
+.formGroup > .formField::placeholder {
+    color: transparent;
+}
+
+.formGroup > .formField:disabled {
+    color: rgb(172, 172, 172);
+    background-color: rgba(128, 128, 128, 0.05);
+    cursor: not-allowed;
+}
+
+.formGroup > label,
+.formGroup > .formField:focus + label {
+    position: absolute;
+    display: block;
+    top: 2px;
+
+    font-family: "Open Sans", "Calibri", "Segoe UI", "sans-serif";
+    font-size: 11px;
+    font-weight: 700;
+    color: #5a5b5f;
+    
+    text-transform: uppercase;
+    letter-spacing: .1px;
+    user-select: none;
+    cursor: text;
+
+    transition: all 0.3s ease;
+}
+
+.formGroup > .formField:placeholder-shown + label {
+    top: 24px;
+    font-size: 12px;
+}
+
+.formGroup > .formField:focus + label {
+    top: 2px;
+    font-size: 11px;
+    color: #5f5f62;
+}
+
+.formGroup > .formField:disabled + label {
+    cursor: not-allowed;
+}
+
+body.dark .formGroup > .formField {
+    border-bottom-color: rgba(130, 130, 130, 0.4);
+    color: #cecece;
+}
+
+body.dark .formGroup > label {
+    color: #b1b3b8;
+}
+
+body.dark .formGroup > .formField:focus + label {
+    color: #b9bbbe;
+}
+
+body.dark .formGroup > .formField:focus {
+    border-bottom-color: rgba(224, 224, 224, 0.8);
+}
+
+/* Light Color */
+
+.formGroup[data-color="light"] > .formField,
+body.dark .formGroup > .formField {
+    border-bottom-color: rgba(130, 130, 130, 0.4);
+    color: #cecece;
+}
+
+.formGroup[data-color="light"] > label,
+body.dark .formGroup > label {
+    color: #b1b3b8;
+}
+
+.formGroup[data-color="light"] > .formField:focus + label,
+body.dark .formGroup > .formField:focus + label {
+    color: #b9bbbe;
+}
+
+.formGroup[data-color="light"] > .formField:focus,
+body.dark .formGroup > .formField:focus {
+    border-bottom-color: rgba(224, 224, 224, 0.8);
+}
+
+.formGroup[data-color="light"] > .formField > option,
+body.dark .formGroup > .formField > option {
+    background-color: rgb(34, 34, 34);
+}
+
+.formGroup[data-color="light"] > .formField > option:checked,
+body.dark .formGroup > .formField > option:checked {
+    color: rgb(34, 34, 34);
+    background-color: rgb(228, 228, 228);
+}
+
+/* Blue */
+
+.formGroup[data-color="blue"] > .formField {
+    border-bottom-color: rgba(130, 130, 130, 0.4);
+    color: #424242;
+}
+
+.formGroup[data-color="blue"] > label {
+    color: #8b8b8b;
+}
+
+.formGroup[data-color="blue"] > .formField:focus + label {
+    color: #4285f4;
+}
+
+.formGroup[data-color="blue"] > .formField:focus {
+    border-bottom-color: #4285f4;
+}
+
+body.dark .formGroup[data-color="blue"] > .formField {
+    border-bottom-color: rgba(130, 130, 130, 0.4);
+    color: #dddddd;
+}
+
+body.dark .formGroup[data-color="blue"] > label {
+    color: #8b8b8b;
+}
+
+body.dark .formGroup[data-color="blue"] > .formField:focus + label {
+    color: #73a7fa;
+}
+
+body.dark .formGroup[data-color="blue"] > .formField:focus {
+    border-bottom-color: #5591f3;
+}
+
+/* Purple */
+
+.formGroup[data-color="purple"] > .formField {
+    border-bottom-color: rgba(130, 130, 130, 0.4);
+    color: #424242;
+}
+
+.formGroup[data-color="purple"] > label {
+    color: #b1b3b8;
+}
+
+.formGroup[data-color="purple"] > .formField:focus + label {
+    color: #512da8;
+}
+
+.formGroup[data-color="purple"] > .formField:focus {
+    border-bottom-color: #512da8;
+}
+
+body.dark .formGroup[data-color="purple"] > .formField {
+    border-bottom-color: rgba(130, 130, 130, 0.4);
+    color: #d6d6d6;
+}
+
+body.dark .formGroup[data-color="purple"] > label {
+    color: #b1b3b8;
+}
+
+body.dark .formGroup[data-color="purple"] > .formField:focus + label {
+    color: #c49afa;
+}
+
+body.dark .formGroup[data-color="purple"] > .formField:focus {
+    border-bottom-color: #794edf;
+}
+
+/* Red */
+.formGroup[data-color="red"] > .formField {
+    border-bottom-color: rgba(255, 0, 0, 0.4);
+    color: #ff1c1c;
+}
+
+.formGroup[data-color="red"] > label {
+    color: #ff3333;
+}
+
+.formGroup[data-color="red"] > .formField:focus + label {
+    color: #cc0101;
+}
+
+.formGroup[data-color="red"] > .formField:focus {
+    border-bottom-color: #d31010;
+}
+
+body.dark .formGroup[data-color="red"] > .formField {
+    border-bottom-color: rgba(255, 75, 108, 0.6);
+    color: #f1a3a3;
+}
+
+body.dark .formGroup[data-color="red"] > label {
+    color: #ce2c57;
+}
+
+body.dark .formGroup[data-color="red"] > .formField:focus + label {
+    color: #fa9292;
+}
+
+body.dark .formGroup[data-color="red"] > .formField:focus {
+    border-bottom-color: #fa7171;
+}
+
+/* SQ-INPUT */
+
+.sq-input {
+    position: relative;
+    display: block;
+
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    font-family: Nunito, "Segoe UI";
+    font-weight: 400;
+    font-size: 14px;
+
+    border: unset;
+    background-color: rgb(245, 245, 245);
+}
+
+.sq-input:focus {
+    outline: none;
+}
+
+.sq-input::placeholder {
+    letter-spacing: .4px;
+    color: rgb(94, 94, 94);
+}
+
+body.dark .sq-input {
+    color: white;
+    background-color: rgb(34, 34, 34);
+}
+
+body.dark .sq-input::placeholder {
+    color: rgb(148, 148, 148);
+}
+
+/** IMAGE INPUT */
+
+.imageInput {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    margin: 8px 0;
+}
+
+.imageInput > input {
+    display: none;
+}
+
+.imageInput > .label {
+    position: relative;
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-family: "Open Sans", "Calibri", "Segoe UI", "sans-serif";
+    font-size: 11px;
+    font-weight: 700;
+    color: #5a5b5f;
+    text-transform: uppercase;
+    letter-spacing: .1px;
+
+    user-select: none;
+    cursor: text;
+    transition: color 0.3s ease;
+}
+
+.imageInput > label {
+    min-height: 100px;
+    cursor: pointer;
+}
+
+.imageInput > label::before {
+    content: "\f07c";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 18px;
+    font-style: normal;
+    color: rgb(248, 248, 248);
+
+    z-index: 1;
+    opacity: 0;
+    background-color: rgba(38, 38, 38, 0.6);
+
+    transition: opacity 0.2s ease-out;
+}
+
+.imageInput > label:hover::before {
+    opacity: 1;
+}
+
+.imageInput > label[data-errored="true"]::after {
+    content: "\f128";
+}
+
+.imageInput > label:hover::after {
+    display: none;
+}
+
+.imageInput > .clear {
+    position: absolute;
+    display: none;
+    top: 28px;
+    right: 10px;
+
+    cursor: pointer;
+    z-index: 1;
+}
+
+.imageInput > .clear.show {
+    display: inline-flex;
+}
+
+.imageInput > .clear::after {
+    font-size: 20px;
+    transition: color 0.2s ease-out;
+}
+
+.imageInput > label:hover + .clear::after {
+    color: white;
+}
+
+.imageInput > button {
+    margin-top: 5px;
+}
+
+/* Dark Icon Input */
+body.dark ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
