@@ -1,0 +1,2227 @@
+/* 
+? |-----------------------------------------------------------------------------------------------|
+? |  /popupPage/style.css                                                                         |
+? |                                                                                               |
+? |  Copyright (c) 2018-2020 Belikhun. All right reserved                                         |
+? |  Licensed under the MIT License. See LICENSE in the project root for license information.     |
+? |-----------------------------------------------------------------------------------------------|
+*/
+
+html {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100%;
+    font-family: "Segoe UI", "Calibri";
+    font-weight: normal;
+    font-size: 12px;
+    background-color: rgb(24, 24, 24);
+    color: rgb(250, 250, 250);
+
+    overflow: hidden;
+}
+
+body.disableTransition * {
+	transition: unset!important;
+}
+
+/*? ================= */
+/*?   Main Page Rule  */
+/*? ================= */
+
+.main {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main > .splash {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.main > .splash > .loadPanel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    overflow: hidden;
+
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.main > .splash > .loadPanel > .icon {
+    position: relative;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 78px;
+    height: 78px;
+}
+
+.main > .splash > .loadPanel > .info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 0;
+}
+
+.main > .splash > .loadPanel > .info > .progressBar {
+    width: 160px;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.main > .splash > .loadPanel > .info > .detail {
+    font-family: "Open Sans";
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: .2px;
+    margin-top: 6px;
+}
+
+.main > .splash > .loadPanel > .footer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    color: rgba(202, 202, 202, 0.8);
+}
+
+.main > .splash > .loadPanel > .footer > t:first-child {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.main > .splash > .toolHeader {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    bottom: 0;
+    
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.main > .splash > .toolHeader > .navbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+
+    width: 100%;
+    height: 40px;
+
+    background-color: #282828;
+}
+
+.main > .splash > .toolHeader > .navbar > .icon {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: 0 6px 0 10px;
+}
+
+.main > .splash > .toolHeader > .navbar > .clock {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: .3px;
+
+    margin-right: 10px;
+    
+    color: #e2e2e2;
+    user-select: none;
+}
+
+.main > .splash > .toolHeader > .navbar > .clock > sub {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 16px;
+    margin-right: 2px;
+}
+
+.main > .splash > .toolHeader > .navbar > .clock > ms {
+    font-size: 13px;
+}
+
+.main > .splash > .toolHeader > .navbar > .clock > ms::before {
+    content: ".";
+}
+
+.main > .splash > .toolHeader > .navbar > .user {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.main > .splash > .toolHeader > .navbar > .user > .name {
+    font-family: Nunito;
+    font-weight: 900;
+    font-size: 16px;
+    font-style: italic;
+    text-align: right;
+    color: white;
+}
+
+.main > .splash > .toolHeader > .navbar > .user > .tags {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 4px;
+}
+
+.main > .splash > .toolHeader > .navbar > .hamburger {
+    position: relative;
+    width: 20px;
+    height: 18px;
+    margin: 0 10px;
+    cursor: pointer;
+    -webkit-transition: all 1s cubic-bezier(0.06, 0.81, 0, 0.98);
+    -o-transition: all 1s cubic-bezier(0.06, 0.81, 0, 0.98);
+    transition: all 1s cubic-bezier(0.06, 0.81, 0, 0.98);
+}
+
+.main > .splash > .toolHeader > .navbar > .hamburger > span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: rgb(216, 216, 216);
+    left: 0;
+    -webkit-transition-property: opacity, -webkit-transform;
+    -o-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+    -webkit-transition-duration: 0.5s;
+         -o-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease;
+         -o-transition-timing-function: ease;
+            transition-timing-function: ease;
+}
+
+.main > .splash > .toolHeader > .navbar > .hamburger > span:nth-child(1) {
+    top: 0;
+}
+
+.main > .splash > .toolHeader > .navbar > .hamburger > span:nth-child(2) {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.main > .splash > .toolHeader > .navbar > .hamburger > span:nth-child(3) {
+    bottom: 0;
+}
+
+.main > .splash > .toolHeader > .navbar > .hamburger.active span:nth-child(1) {
+    -webkit-transform: translateY(7px) rotate(45deg);
+        -ms-transform: translateY(7px) rotate(45deg);
+            transform: translateY(7px) rotate(45deg);
+}
+
+.main > .splash > .toolHeader > .navbar > .hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.main > .splash > .toolHeader > .navbar > .hamburger.active span:nth-child(3) {
+    -webkit-transform: translateY(-7px) rotate(-45deg);
+        -ms-transform: translateY(-7px) rotate(-45deg);
+            transform: translateY(-7px) rotate(-45deg);
+}
+
+.main > .splash > .toolHeader > .proxyStatus {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+
+    width: 100%;
+
+    background-color: rgba(70, 70, 70, 50%);
+}
+
+.main > .splash.proxyInfo > .toolHeader > .proxyStatus {
+    display: flex;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    height: 40px;
+
+    user-select: none;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .bar {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .icon {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .icon::before {
+    content: "\f542";
+    font-family: "Font Awesome 5 Free";
+    font-size: 18px;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .icon.simpleSpinner {
+    width: 20px;
+    height: 20px;
+    border-color: white white transparent white;
+    border-width: 4px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .icon.simpleSpinner::before {
+    content: "";
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .detail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    margin: 0 10px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .detail > .detailMain {
+    font-family: "Nunito";
+    font-weight: 900;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 16px;
+    color: white;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .detail > .detailSub {
+    color: white;
+    font-family: Calibri;
+    font-size: 13px;
+    line-height: 12px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .progress {
+    margin-right: 10px;
+
+    font-family: "Consolas";
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .sq-btn {
+    width: 50px;
+    height: 100%;
+    padding: unset;
+
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .sq-btn:disabled {
+    width: 0;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .sq-btn:focus {
+    text-decoration: none;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .sq-btn > i::before {
+    content: "\f111";
+    display: block;
+
+    font-family: "Font Awesome 5 Free";
+    font-size: 18px;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .more > i::before {
+    content: "\f0d7";
+    font-size: 26px;
+
+    transform: rotate(0);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.main > .splash.proxyInfo.proxyDetail > .toolHeader > .proxyStatus > .header > .more > i::before {
+    transform: rotate(180deg);
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .header > .reload > i::before {
+    content: "\f2f1";
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list {
+    position: relative;
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list:empty::before {
+    content: "Trống";
+    position: absolute;
+    display: block;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    box-sizing: border-box;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    color: rgba(236, 236, 236, 0.8);
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    padding: 5px 10px;
+
+    box-sizing: border-box;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    min-width: calc(55% - 5px);
+    margin-right: 5px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .info > .column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+
+    margin-right: 5px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .info > .column > .address {
+    font-family: Calibri;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .info > .column > .interface {
+    font-size: 12px;
+    color: #ffffffa6;
+    line-height: 10px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .info > .ip {
+    flex-grow: 1;
+
+    font-family: Nunito;
+    font-size: 17px;
+    font-weight: 800;
+    font-style: italic;
+    text-align: center;
+    color: white;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .resource {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .resource > .progressBar {
+    height: 20px;
+    margin-top: unset;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .resource > .progressBar::after {
+    content: "\f111";
+    position: absolute;
+    display: block;
+
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .resource > .progressBar.cpu::after {
+    content: "\f1ec"
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .resource > .progressBar.ram::after {
+    content: "\f2db"
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .resource > .progressBar > .right {
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+
+    line-height: 10px;
+    color: white;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    min-width: 70px;
+    margin-left: 5px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar {
+    position: relative;
+    display: block;
+
+    width: 16px;
+    height: 14px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar > span {
+    position: absolute;
+    display: block;
+
+    width: 4px;
+    height: 100%;
+
+    right: 0;
+    bottom: 0;
+
+    background-color: #616161;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar > span:nth-child(1) {
+    right: unset;
+    left: 0;
+    height: 33.3%;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar > span:nth-child(2) {
+    height: 66.6%;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar::before,
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar::after {
+    content: "";
+    position: absolute;
+    display: none;
+
+    width: calc(100% * 1.414213);
+    height: 2px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    z-index: 1;
+
+    background-color: rgb(255, 122, 122);
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar[data-value="no"]::before,
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar[data-value="no"]::after {
+    display: block;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar[data-value="3"] > span,
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar[data-value="2"] > span:nth-child(1),
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar[data-value="2"] > span:nth-child(2),
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .bar[data-value="1"] > span:nth-child(1) {
+    background-color: #70e484;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .ping > .value {
+    margin-right: 5px;
+}
+
+.main > .splash > .toolHeader > .proxyStatus > .list > .item > .status > .state {
+    font-family: "Consolas";
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.main:not([data-layout = "1"]) > .splash > .loadPanel {
+    opacity: 0;
+}
+
+.main:not([data-layout = "1"]) > .splash > .toolHeader {
+    opacity: 1;
+}
+
+.main > .splash.optimize {
+    z-index: 100;
+}
+
+.main > .splash.optimize > .loadPanel {
+    display: none;
+}
+
+/*? MAIN CONTAINER */
+
+.main .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main > .container > .scriptContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main > .container > .scriptContainer > .announcement {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    z-index: 1;
+}
+
+.main > .container > .scriptContainer > .header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+
+    margin: 10px;
+    border-radius: 8px;
+
+    z-index: 1;
+    overflow: hidden;
+}
+
+.main > .container > .scriptContainer > .header > .left {
+    position: relative;
+    display: inline-block;
+    flex-grow: 1;
+    margin: 10px 20px;
+}
+
+.main > .container > .scriptContainer > .header > .left > .currentPage {
+    position: relative;
+    display: block;
+    font-family: "Nunito";
+    font-style: italic;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.main > .container > .scriptContainer > .header > .left > .currentTitle {
+    position: relative;
+    display: block;
+    font-family: Calibri;
+    font-size: 14px;
+}
+
+.main > .container > .scriptContainer > .header > .left > .tabId {
+    position: relative;
+    display: block;
+    font-size: 11px;
+    padding-top: 10px;
+    color: rgb(230, 230, 230);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.main > .container > .scriptContainer > .header > .left > .tabId::before {
+    content: "Đang theo dõi TabID: ";
+}
+
+.main > .container > .scriptContainer > .header > .right {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.main > .container > .scriptContainer > .header > .right > .reloadBtn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: rgba(36, 36, 36, 0.1);
+
+    transition: background-color 0.3s ease;
+}
+
+.main > .container > .scriptContainer > .header > .right > .reloadBtn::before {
+    content: "\f2f1";
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    font-weight: 900;
+    color: rgb(212, 212, 212);
+    transition: color 0.3s ease;
+}
+
+.main > .container > .scriptContainer > .header > .right > .reloadBtn:hover {
+    background-color: rgba(36, 36, 36, 0.3);
+}
+
+.main > .container > .scriptContainer > .header > .right > .reloadBtn:hover::before {
+    color: white;
+}
+
+.main > .container > .scriptContainer > .scriptList {
+    position: relative;
+    display: block;
+    flex-direction: column;
+    flex-grow: 1;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox {
+	position: sticky;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+    top: 0;
+	margin: 0 10px 5px;
+	padding: 10px 5px;
+	border-radius: 12px;
+    z-index: 1;
+
+    background-color: rgb(24, 24, 24);
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox.typing {
+    background-color: rgb(38, 38, 38);
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox > input {
+	flex-grow: 1;
+	height: auto;
+	font-size: 28px;
+	font-weight: 800;
+
+	padding: 0 80px 0 0;
+	background-color: unset;
+
+    transition:
+        padding 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox > input::placeholder {
+	color: rgba(145, 145, 145, 0.5);
+	transition: color 0.2s ease-out;
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox:hover > input::placeholder {
+	color: rgba(145, 145, 145, 0.7);
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox > icon::after {
+	font-size: 36px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox > icon {
+	position: absolute;
+	right: 0;
+
+	opacity: 0;
+    cursor: pointer;
+	transition:
+        right 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.2s ease-out;
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox > .search {
+	opacity: 1;
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox > .search::after {
+	font-size: 30px;
+	color: rgba(145, 145, 145, 0.5);
+	transition: color 0.2s ease-out;
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox:hover > .search::after {
+	color: rgb(148, 148, 148);
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox.typing > input {
+    padding-left: 10px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox.typing > icon {
+    right: 15px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox.typing > .search {
+    opacity: 0;
+    z-index: -1;
+}
+
+.main > .container > .scriptContainer > .scriptList > .searchBox.typing > .clear {
+    opacity: 1;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList::before {
+    content: "Sample Group";
+    position: relative;
+    display: block;
+    width: calc(100% - 20px);
+    margin: 6px 10px;
+    padding: 6px 15px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    font-size: 10px;
+    font-weight: bold;
+    color: #cccccc;
+    text-transform: uppercase;
+
+    background-color: rgba(180, 180, 180, 0.1);
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList:first-child::before {
+    margin-top: 0;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList:empty::after {
+    content: "Trống";
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    color: rgba(236, 236, 236, 0.5);
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList:not(.autorun) > .item {
+    padding: 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList:not(.autorun):not(.available) > .item:not([disabled]):hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList:not(.autorun):not(.available) > .item:not([disabled]):active {
+    transform: scale(0.95);
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item > .icon {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item > .left {
+    position: relative;
+    flex-grow: 2;
+    flex-shrink: 1;
+    padding-right: 10px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item > .left > .name {
+    font-family: "Nunito";
+    font-size: 15px;
+    font-weight: bold;
+    user-select: none;
+    color: rgb(212, 212, 212);
+
+    transition: color 0.3s ease;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item:not([disabled]):hover > .left > .name {
+    color: rgb(248, 248, 248);
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item > .left > .description {
+    user-select: none;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item > .right {
+    position: relative;
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item > .right > t {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2px 0;
+    font-weight: 300;
+    font-size: 13px;
+    font-family: "Calibri";
+    color: rgb(246, 246, 246);
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item > .right > t::after {
+    content: "\f2f1";
+    
+    padding-left: 6px;
+
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 14px;
+    text-align: right;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga";
+    color: rgb(226, 226, 226);
+
+    user-select: none;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item > .right > .id::after {
+    content: "\f15b";
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList > .item > .right > .version::after {
+    content: "\f61f";
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList:not(.autorun) > .item[disabled] {
+    background-color: #1b1b1b;
+    cursor: not-allowed;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList:not(.autorun) .item[disabled] > .left > .name {
+    color: #3f3f3f;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList:not(.autorun) .item[disabled] > .left > .description {
+    color: #3e3e3e;
+}
+
+.main > .container > .scriptContainer > .scriptList > .itemList:not(.autorun) .item[disabled] > .right > t::after,
+.main > .container > .scriptContainer > .scriptList > .itemList:not(.autorun) .item[disabled] > .right > t {
+    color: #404040;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun::before {
+    content: "Tự động chạy";
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item {
+    margin: 0 10px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    user-select: none;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .left,
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .right {
+    margin:  10px 10px 5px 10px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .settings {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .settings::before {
+    content: "\f013";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 19px;
+    color: white;
+
+    transition: transform 0.3s ease;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .settings:hover::before {
+    transform: rotate(70deg) scale(1.1);
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .errorLogs {
+    margin: 0 10px;
+    padding: 24px 0 5px 0;
+    border-top: 1px solid rgba(230, 230, 230, 0.5);
+    width: calc(100% - 20px);
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .errorLogs::before {
+    content: "ERROR LOGS";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 4px;
+    text-align: center;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .errorLogs > li {
+    margin-left: 20px;
+    color: white;
+    border-left-color: rgba(255, 255, 255, 0.5);
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .errorLogs > li::before {
+    color: #d0d0d0;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .errorLogs > li:hover::before {
+    color: #a9ddff;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 5px 10px 10px 10px;
+    flex-grow: 1;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    background-color: rgba(230, 230, 230, 0.5);
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .icon {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .icon::before {
+    content: "\f111";
+    position: relative;
+    display: block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    font-size: 21px;
+    color: white;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .icon[data-icon="check"]::before {
+    content: "\f00c";
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .icon[data-icon="pause"]::before {
+    content: "\f04c";
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .icon[data-icon="error"]::before {
+    content: "\f071";
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .icon[data-icon="spinner"]::before {
+    content: "";
+	width: 16px;
+    height: 16px;
+	border-width: 3px;
+	border-style: solid;
+	border-radius: 50%;
+	border-color: rgb(255, 255, 255);
+	border-right-color: transparent;
+	box-sizing: border-box;
+
+	animation: simple-rotate 0.75s linear 0s infinite;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .status {
+    flex-grow: 1;
+    font-family: Consolas;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .progress {
+    margin-left: 10px;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .progressBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: rgba(58, 58, 58, 0.5);
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item .left .name,
+.main > .container > .scriptContainer > .scriptList > .autorun > .item .left .name:hover,
+.main > .container > .scriptContainer > .scriptList > .autorun > .item .left .description,
+.main > .container > .scriptContainer > .scriptList > .autorun > .item .right > t,
+.main > .container > .scriptContainer > .scriptList > .autorun > .item .right > t::after,
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .status,
+.main > .container > .scriptContainer > .scriptList > .autorun > .item > .runInfo > .progress {
+    color: white;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] {
+    cursor: not-allowed;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] .left .name {
+    color: #888888;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] .left .description {
+    color: #747474;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] .right > t::after,
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] .right > t {
+    color: #858585;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] .runInfo::before {
+    background-color: rgba(95, 95, 95, 0.5);
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] .runInfo .icon::before {
+    content: "\f05e";
+    color: #bd2f2f;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] .runInfo .status,
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] .runInfo .progress {
+    color: #ababab;
+}
+
+.main > .container > .scriptContainer > .scriptList > .autorun > .item[disabled] .runInfo .progressBar {
+    background-color: rgba(68, 68, 68, 0.4);
+}
+
+.main > .container > .scriptContainer > .scriptList > .thisPage::before {
+    content: "Trang hiện tại";
+}
+
+.main > .container > .scriptContainer > .scriptList > .undepend::before {
+    content: "Chạy ngoài";
+}
+
+.main > .container > .scriptContainer > .scriptList > .available::before {
+    content: "Tất cả";
+}
+
+.main > .container > .scriptContainer > .scriptList > .available > .item {
+    display: none;
+    cursor: default!important;
+}
+
+.main > .container > .scriptContainer > .scriptList > .available:not(:empty)::after {
+    content: "Di Chuột Để Xem";
+    position: relative;
+    display: block;
+
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    color: rgba(236, 236, 236, 0.5);
+}
+
+.main > .container > .scriptContainer > .scriptList > .available:not(:empty):hover::after {
+    display: none;
+}
+
+.main > .container > .scriptContainer > .scriptList > .available:hover > .item {
+    display: flex;
+}
+
+.main > .container > .scriptContainer > .scriptList > .available > .item:not([disabled]):active {
+    transform: unset;
+}
+
+.main > .container > .scriptSettings {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main > .container > .scriptSettings > .header {
+    position: relative;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main > .container > .scriptSettings > .header > .message {
+    padding-top: 10px;
+}
+
+.main > .container > .scriptSettings > .itemInfo {
+    position: relative;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.main > .container > .scriptSettings > .itemInfo[data-hide="true"] {
+    display: none;
+}
+
+.main > .container > .scriptSettings > .itemInfo > .id {
+    margin-top: 10px;
+    font-weight: lighter;
+    font-size: 13px;
+    font-family: Calibri;
+    color: #f7f7f7;
+}
+
+.main > .container > .scriptSettings > .itemInfo > .id::before {
+    content: "#";
+}
+
+.main > .container > .scriptSettings > .itemInfo > .title {
+    font-family: Nunito;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    margin: 4px 10px 0 10px;
+}
+
+.main > .container > .scriptSettings > .itemInfo > .price {
+    position: relative;
+    font-weight: bold;
+    font-size: 27px;
+    font-family: Calibri;
+    color: #adffa9;
+}
+
+.main > .container > .scriptSettings > .itemInfo > .tags {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    max-width: 100%;
+}
+
+.main > .container > .scriptSettings > .itemInfo > .tags > tag {
+    position: relative;
+    display: inline-block;
+    background-color: #f1f1f1;
+    color: #4d4d4d;
+    margin: 4px;
+    padding: 2px 10px;
+    border-radius: 15px;
+    font-family: "Calibri";
+    font-weight: bold;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main > .container > .scriptSettings > .settingsPage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .list {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .list > div::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: -12px;
+    background-color: #6e6e6e7a;
+    border-radius: 2px;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .list > div:hover::after {
+    opacity: 1;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .list > .formGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .list > .switchContainer {
+    padding: 16px 0 10px 0;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .list > .radioGroup {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 20px 0 10px 0;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .list > .radioGroup > .label {
+    position: relative;
+    display: block;
+
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .list > .note {
+    margin-top: 8px;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .buttonBox {
+    position: relative;
+    display: flex;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: #1e1e1e;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.main > .container > .scriptSettings > .settingsPage > .buttonBox > button {
+    margin: 5px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.main > .container > .scriptRunLogs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main > .container > .scriptRunLogs > .header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    
+    background-color: #292929;
+    z-index: 1;
+}
+
+.main > .container > .scriptRunLogs > .header > .title {
+    flex-grow: 1;
+    margin: 10px;
+    font-family: Nunito;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: .5px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main > .container > .scriptRunLogs > .header > .clear {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor: pointer;
+    background-color: rgba(36, 36, 36, 0.1);
+
+    transition: background-color 0.3s ease;
+}
+
+.main > .container > .scriptRunLogs > .header > .clear::before {
+    content: "\f12d";
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    font-weight: 900;
+    color: rgb(212, 212, 212);
+    transition: color 0.3s ease;
+}
+
+.main > .container > .scriptRunLogs > .header > .clear:hover {
+    background-color: rgba(36, 36, 36, 0.3);
+}
+
+.main > .container > .scriptRunLogs > .header > .clear:hover::before {
+    color: white;
+}
+
+.main > .container > .scriptRunLogs > .view {
+    position: relative;
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.main > .container > .scriptRunLogs > .view > li {
+    overflow-anchor: none;
+    word-break: break-word;
+}
+
+.main > .container > .scriptRunLogs > .view > li.group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main > .container > .scriptRunLogs > .view > li.group > .title {
+    margin: 2px 0;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.main > .container > .scriptRunLogs > .view > li.group > .extend {
+    position: absolute;
+    display: block;
+
+    left: -20px;
+    top: 4px;
+    transform: rotate(-90deg);
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.main > .container > .scriptRunLogs > .view > li.group > .extend::before {
+    content: "\f0d7";
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 18px;
+    color: rgba(212, 212, 212, 0.6);
+}
+
+.main > .container > .scriptRunLogs > .view > li.group.expand > .extend {
+    transform: rotate(0);
+}
+
+.main > .container > .scriptRunLogs > .view > li.group > .content {
+    display: none;
+    overflow: visible;
+}
+
+.main > .container > .scriptRunLogs > .view > li.group.expand > .content {
+    display: block;
+}
+
+.main > .container > .scriptRunLogs > .view > li.group > .content > li {
+    margin-left: 32px;
+}
+
+.main > .container > .scriptRunLogs > .view:empty::before {
+    content: "\f70e";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, calc(-50% - 22px));
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 72px;
+    color: rgb(192, 192, 192);
+}
+
+
+.main > .container > .scriptRunLogs > .view:empty::after {
+    content: "Không có gì cả 🤔";
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50%;
+    transform: translateY(calc(-50% + 38px));
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: rgb(192, 192, 192);
+}
+
+.main > .container > .scriptRunLogs > .toBottom {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(calc(100% + 20px));
+    background-color: rgb(34, 34, 34);
+
+    transition:
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.6s ease,
+        background-color 0.3s ease;
+}
+
+.main > .container > .scriptRunLogs > .toBottom.show {
+    transform: unset;
+    opacity: 1;
+}
+
+.main > .container > .scriptRunLogs > .toBottom:hover {
+    background-color: rgb(58, 58, 58);
+}
+
+.main > .container > .scriptRunLogs > .toBottom::before {
+    content: "\f107";
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 28px;
+    color: rgb(192, 192, 192);
+}
+
+.main > .container > .scriptRunLog::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    overflow-anchor: auto;
+}
+
+.licenseInfo {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 10px;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.licenseInfo > .left {
+    position: relative;
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 10px 10px 10px 20px;
+}
+
+.licenseInfo > .left > .name {
+    font-family: Nunito;
+    font-weight: 800;
+    font-size: 20px;
+    font-style: italic;
+    color: white;
+}
+
+.licenseInfo > .left > .licenses {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.licenseInfo > .left > .licenses > .license {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.licenseInfo > .left > .licenses > .license > .allow {
+    font-weight: bold;
+    font-size: 13px;
+    color: white;
+}
+
+.licenseInfo > .left > .licenses > .license > .allow::before {
+    content: "Cho Phép: ";
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.licenseInfo > .left > .licenses > .license > .timeDesc {
+    margin-top: 10px;
+    font-family: "Open Sans";
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #efefef;
+}
+
+.licenseInfo > .left > .licenses > .license > timer {
+    color: rgb(250, 250, 250);
+}
+
+.licenseInfo > .left > .licenseKey {
+    position: relative;
+    display: block;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.licenseInfo > .left > .licenseKey > .keyDesc {
+    font-family: "Open Sans";
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #efefef;
+}
+
+.licenseInfo > .left > .licenseKey > .key {
+    margin-top: 2px;
+    max-width: 100%;
+    text-align: left;
+
+    font-family: Consolas;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+
+    word-break: break-all;
+    user-select: text;
+}
+
+.licenseInfo > .right {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.licenseInfo > .right > .keyBtn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: rgba(36, 36, 36, 0.1);
+
+    transition: background-color 0.3s ease;
+}
+
+.licenseInfo > .right > .keyBtn::before {
+    content: "\f084";
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    font-weight: 900;
+    color: rgb(212, 212, 212);
+    transition: color 0.3s ease;
+}
+
+.licenseInfo > .right > .keyBtn:hover {
+    background-color: rgba(36, 36, 36, 0.3);
+}
+
+.licenseInfo > .right > .keyBtn:hover::before {
+    color: white;
+}
+
+.authorList {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    margin: 10px 0;
+}
+
+.authorList > .item {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.authorList > .item > .avatar {
+    position: relative;
+    display: block;
+    width: 94px;
+    height: 94px;
+    border-radius: 50%;
+}
+
+.authorList > .item > .authorName {
+    font-family: Nunito;
+    font-weight: 900;
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 10px;
+    letter-spacing: .5px;
+}
+
+.authorList > .item > .authorInfo {
+    font-size: 12px;
+    color: #cecece;
+}
+
+.main > .runStatus {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main > .runStatus > .status {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: #d2d2d2;
+    padding-top: 10px;
+    font-family: Nunito;
+}
+
+.main > .runStatus > .timer {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 24px;
+    color: white;
+}
+
+.main > .runStatus > .timer > ms {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.main > .runStatus > .timer > ms::before {
+    content: ".";
+}
+
+.main > .runStatus > .progressBarContainer {
+    margin-top: 5px;
+    height: 15px;
+
+    background-color: transparent;
+}
+
+.main > .runStatus > .progressBarContainer > .mainBar {
+    margin: unset;
+    height: 100%;
+
+    transition:
+        height 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.main > .runStatus > .progressBarContainer > .subBar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    height: 0;
+
+    transition:
+        height 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.main > .runStatus > .progressBarContainer.showSub > .mainBar {
+    height: 5px;
+}
+
+.main > .runStatus > .progressBarContainer.showSub > .subBar {
+    height: calc(100% - 5px);
+}
+
+.main > .runStatus > .progressBarContainer > .subBar > .progressBar {
+    flex-grow: 1;
+    
+    height: 100%;
+    margin: unset;
+}
+
+.main > .runStatus > .itemPrice {
+    position: relative;
+    display: flex;
+    margin-top: 6px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main > .runStatus > .itemPrice > .current,
+.main > .runStatus > .itemPrice > .target {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.main > .runStatus > .itemPrice > .seperator {
+    padding: 0 10px;
+}
+
+.main > .runStatus > .itemPrice > .seperator::before {
+    content: "/";
+    font-weight: bold;
+    font-size: 14px;
+    color: #dadada;
+}
+
+.main > .runStatus[data-data-type="time"] > .itemPrice > .seperator::before {
+    content: ">>>";
+    font-weight: normal;
+}
+
+.main > .runStatus > .itemPrice > .saved {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.main > .runStatus > .itemStatus {
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.main > .runStatus > .checkDetail {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.main > .runStatus > .topRight {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 10px;
+    right: 20px;
+}
+
+.main > .runStatus > .topRight > .heartbeat {
+    position: relative;
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-right: 16px;
+    border-radius: 50%;
+    background-color: #1ff81f;
+    opacity: 1;
+
+    animation: heartbeat 0.3s linear;
+    animation-fill-mode: forwards;
+}
+
+.main > .runStatus > .topRight > .heartbeat[data-color="blue"] {
+    background-color: #1fbcf8;
+}
+
+.main > .runStatus > .topRight > .heartbeat[data-color="yellow"] {
+    background-color: #e8e216;
+}
+
+.main > .runStatus > .topRight > .heartbeat[data-color="red"] {
+    background-color: #fd6666;
+}
+
+@keyframes heartbeat {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+.main > .runStatus :not(.bar)[data-color] {
+    transition: color 0.3s ease;
+}
+
+.main > .runStatus [data-color="blue"] {
+    color: #2ce0d9;
+}
+
+.main > .runStatus [data-color="pink"] {
+    color: #ff84bb;
+}
+
+.main > .runStatus [data-color="green"] {
+    color: #b0e40f;
+}
+
+.main > .runStatus [data-color="yellow"] {
+    color: #fee322;
+}
+
+.main > .runStatus [data-color="red"] {
+    color: #ff8282;
+}
+
+.main .popup {
+    position: relative;
+}
+
+.main > .splash,
+.main > .container,
+.main > .runStatus,
+.main > .proxy,
+.main > .container > .scriptContainer,
+.main > .container > .scriptSettings,
+.main > .container > .scriptRunLogs,
+.main > .container > .scriptSettings > .header,
+.main > .container > .scriptSettings > .itemInfo,
+.main > .container > .scriptSettings > .settingsPage,
+.main > .toolInfo,
+.main > .tutorial {
+    overflow: hidden;
+    
+    height: 0;
+    flex-grow: 0;
+    transition:
+        height 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+        max-height 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+        background-color 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/*! BEGIN SPECIAL RULES */
+
+.main > .container > .scriptSettings > .itemInfo,
+.main > .container > .scriptSettings > .settingsPage {
+    height: unset;
+    max-height: 0;
+}
+
+.main > .container > .scriptSettings > .settingsPage {
+    flex-grow: 1;
+}
+
+/*! END SPECIAL RULES */
+
+.popupContainer {
+    padding-top: 40px;
+}
+
+/* Layout */
+
+.main[data-layout = "1"] > .splash {
+    height: 100%;
+}
+
+.main:not([data-layout = "1"]) > .splash {
+    height: 40px;
+}
+
+.main:not([data-layout = "1"]) > .splash.proxyInfo {
+    height: 80px;
+}
+
+.main:not([data-layout = "1"]) > .splash.proxyInfo.proxyDetail {
+    height: 240px;
+}
+
+.main:not([data-layout = "1"]) > .splash.proxyInfo.proxyDetail > .proxyStatus {
+    height: 200px;
+}
+
+.main[data-layout = "2"] > .proxy,
+.main[data-layout = "3"] > .container,
+.main[data-layout = "4"] > .container,
+.main[data-layout = "5"] > .container,
+.main[data-layout = "7"] > .toolInfo,
+.main[data-layout = "8"] > .tutorial {
+    height: calc(100% - 40px);
+}
+
+.main[data-layout = "2"] > .splash.proxyInfo ~ .proxy,
+.main[data-layout = "3"] > .splash.proxyInfo ~ .container,
+.main[data-layout = "4"] > .splash.proxyInfo ~ .container,
+.main[data-layout = "5"] > .splash.proxyInfo ~ .container,
+.main[data-layout = "7"] > .splash.proxyInfo ~ .toolInfo,
+.main[data-layout = "8"] > .splash.proxyInfo ~ .tutorial {
+    height: calc(100% - 80px);
+}
+
+.main[data-layout = "2"] > .splash.proxyInfo.proxyDetail ~ .proxy,
+.main[data-layout = "3"] > .splash.proxyInfo.proxyDetail ~ .container,
+.main[data-layout = "4"] > .splash.proxyInfo.proxyDetail ~ .container,
+.main[data-layout = "5"] > .splash.proxyInfo.proxyDetail ~ .container,
+.main[data-layout = "7"] > .splash.proxyInfo.proxyDetail ~ .toolInfo,
+.main[data-layout = "8"] > .splash.proxyInfo.proxyDetail ~ .tutorial {
+    height: calc(100% - 240px);
+}
+
+.main[data-layout = "3"] > .container > .scriptContainer {
+    height: 100%;
+}
+
+.main[data-layout = "4"] > .container > .scriptSettings,
+.main[data-layout = "5"] > .container > .scriptSettings {
+    height: 100%;
+}
+
+.main[data-layout = "4"] > .container > .scriptSettings > .header {
+    height: 100%;
+}
+
+.main[data-layout = "5"] > .container > .scriptSettings > .itemInfo {
+    max-height: 100%;
+}
+
+.main[data-layout = "5"] > .container > .scriptSettings > .settingsPage {
+    max-height: 100%;
+}
+
+.main[data-layout = "5"] > .container > .scriptSettings > .itemInfo[data-hide="true"] + .settingsPage {
+    height: 100%;
+}
+
+.main[data-layout = "6"] > .container {
+    height: calc(100% - 200px);
+}
+
+.main[data-layout = "6"] > .splash.proxyInfo ~ .container {
+    height: calc(100% - 240px);
+}
+
+.main[data-layout = "6"] > .splash.proxyInfo.proxyDetail ~ .container {
+    height: calc(100% - 400px);
+}
+
+.main[data-layout = "6"] .runStatus {
+    height: 160px;
+}
+
+.main[data-layout = "6"] > .container > .scriptRunLogs {
+    height: 100%;
+}
+
+.sub {
+    position: relative;
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(30, 30, 30);
+    box-shadow: inset 6px 0px 8px -4px rgba(0, 0, 0, 0.75);
+
+    transition:
+        width 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.sub.show {
+    width: calc(100% - 400px);
+}
+
+/** Restyle SMENU  */
+
+#userSettings {
+    z-index: 99;
+}
+
+#userSettings.fixed {
+    position: fixed;
+}
+
+body.dark #userSettings > .main > .navigator {
+    background-color: #141414;
+}
+
+body.dark #userSettings > .main > .wrapper > .smenu > .group {
+    border-top-color: #141414;
+}

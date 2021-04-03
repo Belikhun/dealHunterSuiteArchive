@@ -1,0 +1,547 @@
+/* 
+? |-----------------------------------------------------------------------------------------------|
+? |  /popupPage/subScreen.css                                                                     |
+? |                                                                                               |
+? |  Copyright (c) 2018-2020 Belikhun. All right reserved                                         |
+? |  Licensed under the MIT License. See LICENSE in the project root for license information.     |
+? |-----------------------------------------------------------------------------------------------|
+*/
+
+/** dealHunt LAYOUT */
+
+#subScreen[layout="dealHunt"] {
+	position: relative;
+    display: block;
+    overflow-y: auto
+}
+
+#subScreen[layout="dealHunt"] > .title {
+	position: sticky;
+    display: block;
+    top: 0px;
+    padding: 20px;
+    margin: 0 10px;
+    font-family: "Calibri", "Segoe UI";
+    font-size: 32px;
+    font-weight: bolder;
+    color: rgb(226, 226, 226);
+    background-color: #1e1e1e;
+    z-index: 1;
+}
+
+#subScreen[layout="dealHunt"] > .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: stretch;
+	
+    padding: 10px 30px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header {
+    position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #292929;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .info {
+	flex-grow: 1;
+	font-family: "Calibri", "Segoe UI";
+    font-size: 16px;
+    font-weight: bolder;
+    color: rgb(212, 212, 212);
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .pageFilter {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .pageFilter > .switchContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    direction: rtl;
+    margin: 0 10px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .pageFilter > .switchContainer > span {
+    margin-left: 6px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox {
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox > span {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+    width: 26px;
+    height: 26px;
+    margin: 0 5px;
+    background-color: #3b3b3b;
+	border-radius: 50%;
+	cursor: pointer;
+
+	transition:
+		background-color 0.3s ease;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox > span:hover {
+    background-color: #525252;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox > span::before {
+	content: "\f105";
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+	font-weight: 900;
+    color: rgb(204, 204, 204);
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox > .forward::before {
+    content: "\f050";
+    font-size: 13px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox > .next::before {
+	padding: 0 0 0 2px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox > .prev::before {
+    content: "\f104";
+	padding: 0 2px 0 0;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox > .backward::before {
+    content: "\f049";
+    font-size: 13px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox > .delete::before {
+    content: "\f1f8";
+    font-size: 13px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .header > .buttonBox > .current {
+    font-family: Nunito;
+    font-size: 12px;
+	font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 0 5px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList {
+	position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList:empty::after {
+	content: "Trống";
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    color: rgba(236, 236, 236, 0.5);
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item {
+	position: relative;
+    display: flex;
+	flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: column;
+    background-color: #292929;
+    border-radius: 14px;
+	margin: 10px;
+	max-width: 152px;
+	overflow: hidden;
+	
+	transition: background-color 0.3s ease;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item:hover {
+	background-color: #353535;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item > .thumbnail {
+	border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item > .info {
+	position: relative;
+	display: flex;
+	flex-grow: 1;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .name {
+	position: relative;
+    display: block;
+    flex-grow: 1;
+	font-family: Nunito;
+    font-weight: bold;
+	font-size: 13px;
+	text-decoration: none;
+	color: rgb(236, 236, 236);
+}
+
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .coupon {
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #797979;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .coupon > .code {
+	position: relative;
+    display: block;
+    font-family: Calibri;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #1e1e1e;
+    background-color: #a2c9ff;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .coupon > .price {
+	font-family: Calibri;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fb9a7c;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .coupon > .sale {
+	font-weight: bold;
+    color: #76d7e0;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .priceInfo {
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+	flex-wrap: wrap;
+	margin-top: 10px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .priceInfo > .current {
+	font-family: Calibri;
+    font-weight: bold;
+    font-size: 18px;
+    color: #98ea98;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .priceInfo > .old {
+	font-family: Calibri;
+    font-weight: bold;
+    font-size: 16px;
+    color: #9b9b9b;
+    text-decoration: line-through;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .priceInfo > .discount {
+	font-weight: bold;
+	color: #76d7e0;
+    margin-left: 10px;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .dealInfo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #797979;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .dealInfo > .open {
+    font-size: 11px;
+    text-align: right;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .blackList {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .blackList::before {
+    content: "\f05e";
+    font-family: "Font Awesome 5 Free";
+    font-size: 20px;
+    font-weight: 900;
+    color: rgb(86, 86, 86);
+
+    transition: color 0.3s ease;
+}
+
+#subScreen[layout="dealHunt"] > .container > .itemList > .item .blackList:hover::before {
+    color: rgb(244, 108, 108);
+}
+
+#subScreen[layout="dealHunt"] > .container.allList > .itemList {
+	flex-direction: column;
+}
+
+#subScreen[layout="dealHunt"] > .container.allList > .itemList > .item {
+    flex-direction: row;
+    align-items: center;
+    width: calc(100% - 20px);
+    max-width: unset;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+#subScreen[layout="dealHunt"] > .container.allList > .itemList > .item > .name {
+	display: flex;
+    align-items: center;
+    font-size: 15px;
+	flex-grow: 1;
+}
+
+#subScreen[layout="dealHunt"] > .container.allList > .itemList > .item > .coupon {
+	margin-top: unset;
+	border-bottom: unset;
+	padding: 0 20px 0 10px;
+    border-right: 1px solid #797979;
+}
+
+#subScreen[layout="dealHunt"] > .container.allList > .itemList > .item > .priceInfo {
+	flex-direction: column;
+	margin-top: unset;
+    padding-left: 20px;
+}
+
+#subScreen[layout="dealHunt"] > .container.allList > .itemList > .item > .priceInfo > .current {
+	margin-right: unset;
+}
+
+#subScreen[layout="dealHunt"] > .container.allList > .itemList > .item > .priceInfo > .old {
+    font-size: 13px;
+}
+
+#subScreen[layout="dealHunt"] > .container.allList > .itemList > .item > .priceInfo > .discount {
+	margin-left: unset;
+}
+
+#subScreen[layout="dealHunt"] > .container.allList > .itemList > .item > .blackList {
+    position: relative;
+    bottom: unset;
+    left: unset;
+    margin-left: 20px;
+}
+
+/** accountsRegister LAYOUT */
+
+#subScreen[layout="accountsRegister"] > .header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 10px 20px;
+}
+
+#subScreen[layout="accountsRegister"] > .header > .left {
+    flex-grow: 1;
+
+    font-family: Nunito;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+#subScreen[layout="accountsRegister"] > table {
+    position: relative;
+
+    width: calc(100% - 40px);
+	margin: 0 20px;
+	box-sizing: border-box;
+	border-spacing: 0;
+
+    font-family: "Calibri";
+    font-size: 16px;
+}
+
+#subScreen[layout="accountsRegister"] > table > tr:not(:first-child) {
+    counter-increment: accountsRegisterNth;
+}
+
+#subScreen[layout="accountsRegister"] > table > tr > th {
+    padding: 5px 10px;
+    padding-bottom: 10px;
+    
+    font-family: Nunito;
+    font-size: 11px;
+    font-weight: 900;
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: #b4b4b4;
+}
+
+#subScreen[layout="accountsRegister"] > table > tr > th:nth-child(1) {
+    padding-left: 15px;
+}
+
+#subScreen[layout="accountsRegister"] > table > tr > td {
+    padding: 5px 10px;
+    font-family: Calibri;
+    font-weight: bold;
+    text-align: right;
+}
+
+#subScreen[layout="accountsRegister"] > table > tr:nth-child(even) > td {
+    background-color: #252525;
+}
+
+#subScreen[layout="accountsRegister"] > table > tr:nth-child(even) > td:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+#subScreen[layout="accountsRegister"] > table > tr:nth-child(even) > td:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+#subScreen[layout="accountsRegister"] > table > tr > td:first-child::before {
+    content: counter(accountsRegisterNth);
+}
+
+#subScreen[layout="accountsRegister"] > table > tr > td:last-child > font {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 80px;
+    font-family: Consolas;
+
+    white-space: pre-wrap;
+    padding-left: 20px;
+}
+
+#subScreen[layout="accountsRegister"] > table > tr > td:last-child > font > span {
+    display: inline-block;
+    width: 16px;
+    text-align: center;
+}
+
+/** QRCodeList LAYOUT */
+
+#subScreen[layout="QRCodeList"] > .header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 10px 20px;
+}
+
+#subScreen[layout="QRCodeList"] > .header > .left {
+    flex-grow: 1;
+
+    font-family: Nunito;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+#subScreen[layout="QRCodeList"] > .list {
+    position: relative;
+    display: block;
+    margin: 10px;
+}
+
+#subScreen[layout="QRCodeList"] > .list > .item {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+
+    max-width: 240px;
+    margin: 0 10px;
+}
+
+#subScreen[layout="QRCodeList"] > .list > .item > .detail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    background-color: rgb(56, 56, 56);
+}
+
+#subScreen[layout="QRCodeList"] > .list > .item > .detail > .title {
+    font-family: Consolas;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+#subScreen[layout="QRCodeList"] > .list > .item > .detail > .price {
+    font-size: 26px;
+    font-weight: bold;
+    color: #90d6ff;
+}
+
+#subScreen[layout="QRCodeList"] > .list > .item > .detail > .complete {
+    position: relative;
+    display: block;
+    margin-left: auto;
+
+    cursor: pointer;
+}
+
+#subScreen[layout="QRCodeList"] > .list > .item > .detail > .complete::before {
+    content: "\f00c";
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-size: 24px;
+	font-weight: 900;
+    color: rgb(204, 204, 204);
+}
+
+#subScreen[layout="QRCodeList"] > .list > .item > .detail > .complete:hover::before {
+    color: rgb(124, 255, 146);
+}
